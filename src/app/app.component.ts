@@ -1,12 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Product} from './models/product';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true
 })
 export class AppComponent {
-  title = 'sklep';
+  view: 'products' | 'cart' | 'orders' = "products";
+  cartPopoverVisible = false;
+  cart: Product[] = [];
+  addToCart(product: Product){
+    this.cart.push(product);
+  }
+
+  removeFromCart(product: Product){
+    const index = this.cart.indexOf(product);
+    if(index > -1) this.cart.splice(index, 1);
+  }
+
+  clearCart(){
+    this.cart = [];
+}
+  toggleCartPopover(){
+    this.cartPopoverVisible = !this.cartPopoverVisible;
+  }
 }
