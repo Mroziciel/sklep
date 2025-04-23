@@ -1,33 +1,46 @@
-import {Component, OnInit, Output, EventEmitter, output} from '@angular/core';
-import { Product} from '../../models/product';
+import { Component, OnInit, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Product } from '../../models/product';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './product-list.component.html',
+  styles: []
 })
-export class ProductListComponent implements OnInit{
-  @Output() add = new EventEmitter<Product>();
-
+export class ProductListComponent implements OnInit {
   products: Product[] = [];
-  filteredProducts: Product[] = [];
+  allProducts: Product[] = [];
+  categories: {id: number, name: string}[] = [];
   selectedCategory: string = '';
+  private cartService = inject(CartService);
 
-  async ngOnInit(){
-    const res = await fetch('https://localhost:3000/products')
-    this.products = await res.json();
-    this.filteredProducts = [...this.products];
+  async ngOnInit() {
+    await this.loadProducts();
+    await this.loadCategories();
   }
-  filter(category: string){
+
+  async loadProducts() {
+    const response = await fetch('http://localhost:3000/products');
+    this.allProducts = await response.json();
+    this.products = [...this.allProducts];
+  }
+
+  async loadCategories() {
+    const response = await fetch('http://localhost:3000/categories');
+    this.categories = await response.json();
+  }
+
+  filterByCategory(category: string) {
     this.selectedCategory = category;
-     this.filteredProducts = this.products.filter(p => p.category == category);
+    this.products = category
+      ? this.allProducts.filter(p => p.category === category)
+      : [...this.allProducts];
   }
 
-  showAll(){
-    this.selectedCategory = ''
-    this.filteredProducts = [...this.products];
-  }
-
-  addToCart(product: Product){
-    this.add.emit(product);
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
   }
 }

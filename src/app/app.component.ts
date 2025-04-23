@@ -1,28 +1,23 @@
 import { Component } from '@angular/core';
-import {Product} from './models/product';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { Product } from './models/product';
+import { CartService } from './services/cart.service';
+import { CartComponent } from './components/cart/cart.component';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  standalone: true
+  standalone: true,
+  imports: [CommonModule, RouterModule, CartComponent]
 })
 export class AppComponent {
-  view: 'products' | 'cart' | 'orders' = "products";
-  cartPopoverVisible = false;
   cart: Product[] = [];
-  addToCart(product: Product){
-    this.cart.push(product);
-  }
 
-  removeFromCart(product: Product){
-    const index = this.cart.indexOf(product);
-    if(index > -1) this.cart.splice(index, 1);
-  }
-
-  clearCart(){
-    this.cart = [];
-}
-  toggleCartPopover(){
-    this.cartPopoverVisible = !this.cartPopoverVisible;
+  constructor(private cartService: CartService) {
+    this.cartService.getCartObservable().subscribe((items: Product[]) => {
+      this.cart = items;
+    });
   }
 }

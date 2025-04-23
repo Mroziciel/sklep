@@ -1,4 +1,110 @@
 {
-  "products": [],
-  "orders": []
+  "products": [
+    {
+      "id": "1",
+      "name": "Talerz obiadowy",
+      "image": "https://images.pexels.com/photos/6270541/pexels-photo-6270541.jpeg",
+      "price": 29.99,
+      "category": "Naczynia"
+    },
+    {
+      "id": "2",
+      "name": "Kubek porcelanowy",
+      "image": "https://images.pexels.com/photos/6270541/pexels-photo-6270541.jpeg",
+      "price": 19.99,
+      "category": "Naczynia"
+    },
+    {
+      "id": "3",
+      "name": "Miś pluszowy",
+      "image": "https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg",
+      "price": 49.99,
+      "category": "Zabawki"
+    },
+    {
+      "id": "4",
+      "name": "Samochodzik zdalnie sterowany",
+      "image": "https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg",
+      "price": 89.99,
+      "category": "Zabawki"
+    },
+    {
+      "id": 0,
+      "name": "cos",
+      "image": "https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg",
+      "price": 300,
+      "category": "Naczynia"
+    },
+    {
+      "id": 0,
+      "name": "cos",
+      "image": "https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg",
+      "price": 299,
+      "category": "Zabawki"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "products": [
+        {
+          "id": "1",
+          "name": "Talerz obiadowy",
+          "price": 29.99
+        }
+      ],
+      "total": 29.99,
+      "date": "2025-04-23"
+    },
+    {
+      "id": 2,
+      "products": [
+        {
+          "id": "2",
+          "name": "Kubek porcelanowy",
+          "price": 19.99
+        },
+        {
+          "id": "1",
+          "name": "Talerz obiadowy",
+          "price": 29.99
+        },
+        {
+          "id": "3",
+          "name": "Miś pluszowy",
+          "price": 49.99
+        }
+      ],
+      "total": 99.97,
+      "date": "2025-04-23"
+    },
+    {
+      "id": 3,
+      "products": [
+        {
+          "id": "2",
+          "name": "Kubek porcelanowy",
+          "price": 19.99
+        }
+      ],
+      "total": 19.99,
+      "date": "2025-04-23"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Naczynia"
+    },
+    {
+      "id": "2",
+      "name": "Zabawki"
+    }
+  ],
+  "metadata": {
+    "item": {
+      "lastOrderId": 2
+    },
+    "lastOrderId": 3
+  }
 }

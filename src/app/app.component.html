@@ -1,18 +1,19 @@
 <div class="container mt-4">
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link" [class.active]="view === 'products'">Produkty</a>
+      <a class="nav-link" [routerLink]="['/produkty']" routerLinkActive="active">Produkty</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link position-relative" [class.active]="view === 'cart'" (click)="toggleCartPopover()">Koszyk<span class="badge bg-secondary ms-1">{{cart.length}}</span></a>
+      <button class="nav-link position-relative" (click)="cartComponent.toggleCart()">
+        Koszyk
+        <span class="badge bg-secondary ms-1">{{cart.length}}</span>
+      </button>
     </li>
     <li class="nav-item">
-      <a class="nav-link" (click)="view === 'orders'">Zamówienia</a>
+      <a class="nav-link" [routerLink]="['/zamowienia']" routerLinkActive="active">Zamówienia</a>
     </li>
   </ul>
 
-<!--  <div *ngIf="cartPopoverVisible" class="popover bs-popover-bottom position-absolute p-3" style="top: 60px; right: 20px; width: 300px; z-index: 1000;">-->
-<!--    <app-cart [items]="cart" (remove)="removeFromCart($event)" (checkout)="clearCart()">-->
-<!--    </app-cart>-->
-<!--  </div>-->
+  <router-outlet></router-outlet>
+  <app-cart #cartComponent></app-cart>
 </div>

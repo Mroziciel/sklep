@@ -1,12 +1,25 @@
-<h5>Koszyk</h5>
+<div class="cart-backdrop" [class.show]="isOpen" (click)="closeCart()"></div>
 
-<ul class="list-group mb-3" *ngIf="items.length > 0">
-  <li class="list-group-item" *ngFor="let item of items">
-    <span>{{item.name}}</span>
-    <button class="btn btn-sm btn-danger" (click)="removeItem(item)">Usuń</button>
-  </li>
-</ul>
+<div class="offcanvas-cart" [class.show]="isOpen">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h5 class="mb-0">Koszyk</h5>
+    <button type="button" class="btn-close" (click)="closeCart()"></button>
+  </div>
 
-<div *ngIf="items.length > 0">
-  <button class="btn btn-outline-primary" (click)="finalizeOrder()">Zamów</button>
+  <ng-container *ngIf="items$ | async as items">
+    <ul class="list-group mb-3" *ngIf="items.length > 0">
+      <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of items">
+        <span>{{item.name}}</span>
+        <button class="btn btn-sm btn-danger" (click)="removeItem(item)">Usuń</button>
+      </li>
+    </ul>
+
+    <div *ngIf="items.length > 0">
+      <button class="btn btn-outline-primary w-100" (click)="finalizeOrder()">Zamów</button>
+    </div>
+
+    <div *ngIf="items.length === 0" class="text-center text-muted">
+      Koszyk jest pusty
+    </div>
+  </ng-container>
 </div>
