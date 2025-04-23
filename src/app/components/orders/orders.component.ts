@@ -35,7 +35,6 @@ export class OrdersComponent implements OnInit {
       this.error = '';
     } catch (error) {
       this.error = 'Nie udało się załadować zamówień';
-      console.error('Błąd podczas ładowania zamówień:', error);
     }
   }
 
@@ -47,16 +46,12 @@ export class OrdersComponent implements OnInit {
       this.error = '';
     } catch (error) {
       this.error = 'Nie udało się usunąć zamówienia';
-      console.error('Błąd podczas usuwania zamówienia:', error);
     } finally {
       this.deletingOrderId = null;
     }
   }
 
   async addProduct() {
-    // Tu dodaj logikę dodawania produktu
-    console.log('Dodawanie produktu:', this.newProduct);
-    // Zresetuj formularz
     this.newProduct = {
       name: '',
       image: '',

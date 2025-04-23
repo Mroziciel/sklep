@@ -23,9 +23,16 @@ export class CartService {
 
   removeFromCart(product: Product) {
     const currentItems = this.cartItems.getValue();
-    const newItems = currentItems.filter(item => item !== product);
-    this.cartItems.next(newItems);
+    const indexToRemove = currentItems.findIndex(item => item.id === product.id);
+    if (indexToRemove !== -1) {
+      const newItems = [
+        ...currentItems.slice(0, indexToRemove),
+        ...currentItems.slice(indexToRemove + 1)
+      ];
+      this.cartItems.next(newItems);
+    }
   }
+
 
   clearCart() {
     this.cartItems.next([]);
@@ -56,7 +63,6 @@ export class CartService {
       this.clearCart();
       return true;
     } catch (error) {
-      console.error('Błąd podczas składania zamówienia:', error);
       return false;
     }
   }

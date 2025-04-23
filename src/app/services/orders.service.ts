@@ -58,7 +58,6 @@ export class OrdersService {
       );
       return true;
     } catch (error) {
-      console.error('Błąd podczas usuwania zamówienia:', error);
       throw error;
     }
   }

@@ -29,17 +29,17 @@
       "category": "Zabawki"
     },
     {
-      "id": 0,
-      "name": "cos",
+      "id": "5",
+      "name": "Klocki LEGO",
       "image": "https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg",
-      "price": 300,
-      "category": "Naczynia"
+      "price": 129.99,
+      "category": "Zabawki"
     },
     {
-      "id": 0,
-      "name": "cos",
+      "id": "6",
+      "name": "Puzzle 1000 elementów",
       "image": "https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg",
-      "price": 299,
+      "price": 39.99,
       "category": "Zabawki"
     }
   ],
