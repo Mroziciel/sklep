@@ -1,0 +1,12 @@
+<h5>Koszyk</h5>
+
+<ul class="list-group mb-3" *ngIf="items.length > 0">
+  <li class="list-group-item" *ngFor="let item of items">
+    <span>{{item.name}}</span>
+    <button class="btn btn-sm btn-danger" (click)="removeItem(item)">Usuń</button>
+  </li>
+</ul>
+
+<div *ngIf="items.length > 0">
+  <button class="btn btn-outline-primary" (click)="finalizeOrder()">Zamów</button>
+</div>

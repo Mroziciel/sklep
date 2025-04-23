@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-around align-items-center mb-3">
+  <button class="btn btn-outline-info me-2" (click)="filter('Naczynia')">Naczynia</button>
+  <button class="btn btn-outline-info me-2" (click)="filter('Zabawki')">Zabawki</button>
+</div>
+
+<div class="row">
+  <div class="col-md-4" *ngFor="let product of filteredProducts">
+    <div class="card">
+      <div class="border border-danger card-img-top"></div>
+      <div class="card-body">
+        <h5>{{product.name}}</h5>
+        <p>{{ product.price }} zł</p>
+        <button class="btn btn-success" (click)="addToCart(product)">Kup</button>
+      </div>
+    </div>
+  </div>
+</div>

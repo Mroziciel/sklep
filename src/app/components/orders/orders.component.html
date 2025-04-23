@@ -1,0 +1,29 @@
+<h5>Dodaj produkt</h5>
+<form (ngSubmit)="addProduct()" class="mb-4">
+  <div class="row g-2">
+    <div class="col-md-3">
+      <input class="form-control" placeholder="Nazwa" [(ngModel)]="newProduct.name" name="name">
+    </div>
+    <div class="col-md-2">
+      <input class="form-control" placeholder="Cena" [(ngModel)]="newProduct.price" name="price">
+    </div>
+    <div class="col-md-2">
+      <select class="select" placeholder="Kategoria" [(ngModel)]="newProduct.category" name="category">
+        <option value="Naczynia">Naczynia</option>
+        <option value="Zabawki">Zabawki</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary" type="submit">Dodaj</button>
+    </div>
+  </div>
+</form>
+
+<h5>Zamówienia</h5>
+<div *ngIf="orders.length === 0">Brak zamówień</div>
+<div *ngFor="let order in orders">
+  <div>
+    <h6>Zamówienie {{order.id}}</h6>
+    <button class="btn btn-danger"
+  </div>
+</div>
