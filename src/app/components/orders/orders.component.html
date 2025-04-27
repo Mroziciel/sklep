@@ -27,9 +27,6 @@
 <div *ngFor="let order of orders" class="card mb-3">
   <div class="card-body">
     <h6>Zamówienie #{{ order.id }}</h6>
-    <ul>
-      <li *ngFor="let p of order.products">{{ p.name }} - {{ p.price}}</li>
-    </ul>
     <button class="btn btn-sm btn-danger" (click)="deleteOrder(order.id)">Usuń</button>
   </div>
 </div>

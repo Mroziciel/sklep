@@ -3,92 +3,76 @@
     {
       "id": "1",
       "name": "Talerz obiadowy",
-      "image": "https://images.pexels.com/photos/6270541/pexels-photo-6270541.jpeg",
+      "image": "/public/trump.jpg",
       "price": 29.99,
       "category": "Naczynia"
     },
     {
       "id": "2",
       "name": "Kubek porcelanowy",
-      "image": "https://images.pexels.com/photos/6270541/pexels-photo-6270541.jpeg",
+      "image": "/public/trump.jpg",
       "price": 19.99,
       "category": "Naczynia"
     },
     {
       "id": "3",
       "name": "Miś pluszowy",
-      "image": "https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg",
+      "image": "/public/trump.jpg",
       "price": 49.99,
       "category": "Zabawki"
     },
     {
       "id": "4",
       "name": "Samochodzik zdalnie sterowany",
-      "image": "https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg",
+      "image": "/public/trump.jpg",
       "price": 89.99,
       "category": "Zabawki"
     },
     {
       "id": "5",
       "name": "Klocki LEGO",
-      "image": "https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg",
+      "image": "/public/trump.jpg",
       "price": 129.99,
       "category": "Zabawki"
     },
     {
       "id": "6",
       "name": "Puzzle 1000 elementów",
-      "image": "https://images.pexels.com/photos/207891/pexels-photo-207891.jpeg",
+      "image": "/public/trump.jpg",
       "price": 39.99,
       "category": "Zabawki"
     }
   ],
   "orders": [
     {
-      "id": 1,
-      "products": [
-        {
-          "id": "1",
-          "name": "Talerz obiadowy",
-          "price": 29.99
-        }
-      ],
-      "total": 29.99,
-      "date": "2025-04-23"
+      "id": 4,
+      "total": 129.99,
+      "date": "2025-04-27"
     },
     {
-      "id": 2,
-      "products": [
-        {
-          "id": "2",
-          "name": "Kubek porcelanowy",
-          "price": 19.99
-        },
-        {
-          "id": "1",
-          "name": "Talerz obiadowy",
-          "price": 29.99
-        },
-        {
-          "id": "3",
-          "name": "Miś pluszowy",
-          "price": 49.99
-        }
-      ],
-      "total": 99.97,
-      "date": "2025-04-23"
+      "id": 5,
+      "total": 49.99,
+      "date": "2025-04-27"
     },
     {
-      "id": 3,
-      "products": [
-        {
-          "id": "2",
-          "name": "Kubek porcelanowy",
-          "price": 19.99
-        }
-      ],
-      "total": 19.99,
-      "date": "2025-04-23"
+      "id": 6,
+      "total": 49.98,
+      "date": "2025-04-27"
+    },
+    {
+      "id": 7,
+      "total": 59.98,
+      "date": "2025-04-27"
+    },
+    {
+      "id": 8,
+      "total": 59.98,
+      "date": "2025-04-27"
+    },
+    {
+      "id": 9,
+      "total": 59.98,
+      "date": "2025-04-27"
     }
   ],
   "categories": [
@@ -103,8 +87,23 @@
   ],
   "metadata": {
     "item": {
-      "lastOrderId": 2
+      "item": {
+        "item": {
+          "item": {
+            "item": {
+              "item": {
+                "lastOrderId": 3
+              },
+              "lastOrderId": 4
+            },
+            "lastOrderId": 5
+          },
+          "lastOrderId": 6
+        },
+        "lastOrderId": 7
+      },
+      "lastOrderId": 8
     },
-    "lastOrderId": 3
+    "lastOrderId": 9
   }
 }

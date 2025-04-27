@@ -3,7 +3,6 @@ import { Product } from '../models/product';
 import { BehaviorSubject } from 'rxjs';
 import { OrdersService } from './orders.service';
 import { inject } from '@angular/core';
-import { OrderProduct } from '../models/order';
 
 @Injectable({
   providedIn: 'root'
@@ -49,11 +48,6 @@ export class CartService {
     const total = items.reduce((sum, item) => sum + item.price, 0);
 
     const orderData = {
-      products: items.map(item => ({
-        id: item.id.toString(),
-        name: item.name,
-        price: item.price
-      } as OrderProduct)),
       total: total,
       date: new Date().toISOString().split('T')[0]
     };
